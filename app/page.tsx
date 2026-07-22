@@ -67,10 +67,6 @@ export default function Home() {
             src="/j-angels-logo.png"
             alt="J Angels Carpet Cleaning logo"
           />
-          <span>
-            <strong>J Angels</strong>
-            <small>Carpet Cleaning</small>
-          </span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
           <a href="#services">Services</a>

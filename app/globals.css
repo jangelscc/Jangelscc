@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #122226;
-  --muted: #5c696d;
-  --line: #dce7e6;
-  --paper: #f5faf9;
+  --ink: #102a43;
+  --muted: #5d6f7e;
+  --line: #d9eaf2;
+  --paper: #f2fbff;
   --white: #ffffff;
-  --teal: #0b7c86;
-  --teal-dark: #064e56;
-  --teal-soft: #d9f3ee;
-  --gold: #f3bb47;
-  --gold-dark: #7a4f05;
-  --charcoal: #101c20;
-  --shadow: 0 22px 60px rgba(11, 38, 43, 0.16);
+  --teal: #0a9bd8;
+  --teal-dark: #1b3f91;
+  --teal-soft: #dff5ff;
+  --gold: #97cf35;
+  --gold-dark: #1f9345;
+  --charcoal: #0a2233;
+  --shadow: 0 22px 60px rgba(16, 42, 67, 0.16);
 }
 
 * {
@@ -68,14 +68,13 @@ a {
 }
 
 .brand {
-  gap: 12px;
   min-width: max-content;
 }
 
 .brand-logo {
   display: block;
-  width: 72px;
-  height: 48px;
+  width: 96px;
+  height: 58px;
   object-fit: contain;
   object-position: left center;
 }
@@ -139,12 +138,12 @@ a {
 
 .btn-gold {
   background: var(--gold);
-  color: #201704;
-  box-shadow: 0 14px 30px rgba(243, 187, 71, 0.28);
+  color: #0b2b16;
+  box-shadow: 0 14px 30px rgba(31, 147, 69, 0.24);
 }
 
 .btn-gold:hover {
-  background: #ffd06a;
+  background: #aee24a;
 }
 
 .btn-white {
@@ -166,9 +165,10 @@ a {
   min-height: 720px;
   padding: clamp(54px, 7vw, 96px) clamp(18px, 5vw, 80px);
   background:
-    linear-gradient(110deg, rgba(6, 78, 86, 0.97), rgba(16, 28, 32, 0.91)),
-    radial-gradient(circle at 12% 18%, rgba(243, 187, 71, 0.22), transparent 26%),
-    repeating-linear-gradient(90deg, #0c737d 0 4px, #095f68 4px 12px);
+    linear-gradient(110deg, rgba(9, 66, 132, 0.96), rgba(10, 34, 51, 0.94)),
+    radial-gradient(circle at 13% 19%, rgba(151, 207, 53, 0.28), transparent 27%),
+    radial-gradient(circle at 80% 7%, rgba(10, 155, 216, 0.26), transparent 25%),
+    repeating-linear-gradient(90deg, #0a9bd8 0 4px, #1674b7 4px 12px);
   color: var(--white);
 }
 
@@ -341,7 +341,7 @@ h3 {
   gap: 18px;
   padding: 18px clamp(18px, 5vw, 80px);
   background: var(--gold);
-  color: #211705;
+  color: #0b2b16;
 }
 
 .quick-quote strong,
@@ -511,7 +511,7 @@ h3 {
 }
 
 .quote-panel {
-  background: linear-gradient(145deg, var(--teal), var(--teal-dark));
+  background: linear-gradient(145deg, var(--teal), var(--teal-dark) 58%, var(--gold-dark));
   color: var(--white);
 }
 
@@ -601,7 +601,7 @@ h3 {
   place-items: center;
   border-radius: 7px;
   background: var(--gold);
-  color: #201704;
+  color: #0b2b16;
   font-weight: 900;
 }
 
@@ -647,8 +647,8 @@ h3 {
   }
 
   .brand-logo {
-    width: 92px;
-    height: 58px;
+    width: 112px;
+    height: 68px;
   }
 
   .phone-link,
