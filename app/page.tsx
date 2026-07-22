@@ -27,18 +27,32 @@ const services = [
 
 const reviews = [
   {
-    name: "Fernanda M.",
-    date: "Yelp review, Jun. 2025",
-    quote: "Jose came right on time.",
+    name: "Patricia P.",
+    date: "Customer review, Jul. 2025",
+    quote: "Excellent spot treatment and fair pricing.",
     detail:
-      "Called for a couch with water and milk stains and was able to get cleaned the next day.",
+      "Mentioned fast replies, early arrival, friendly service, and a family-business feel.",
   },
   {
-    name: "Lesli P.",
-    date: "Yelp review, Dec. 2024",
-    quote: "My carpets look just as new.",
+    name: "Melissa S.",
+    date: "Customer review, May 2025",
+    quote: "Prompt, professional, and like new again.",
     detail:
-      "Highlighted efficient, friendly service and a strong carpet cleaning result.",
+      "Recommended J Angels for prompt service and carpets that looked refreshed.",
+  },
+  {
+    name: "Yesenia C.",
+    date: "Customer review, May 2025",
+    quote: "Amazing job. Super clean carpet.",
+    detail:
+      "Called out the cleaning result and customer service after a residential carpet job.",
+  },
+  {
+    name: "Karen W.",
+    date: "Customer review, Apr. 2025",
+    quote: "Cleaner, fresh-smelling, and faster drying.",
+    detail:
+      "Highlighted professional service, punctuality, clear process, and tough stain results.",
   },
 ];
 
@@ -168,7 +182,7 @@ export default function Home() {
               </a>
             </div>
             <div className="trust-row" aria-label="Business highlights">
-              <span>5.0 review highlights</span>
+              <span>Real customer feedback</span>
               <span>Residential focused</span>
               <span>Move-out ready</span>
               <span>Call or text friendly</span>
@@ -273,12 +287,11 @@ export default function Home() {
 
         <section id="reviews" className="section reviews-section">
           <div className="section-heading">
-            <p className="eyebrow">Yelp review highlights</p>
+            <p className="eyebrow">Customer feedback</p>
             <h2>Customers notice the timing, communication, and results.</h2>
             <p>
-              A few public Yelp highlights are included here so visitors can see
-              real customer feedback without leaving the page. The full reviews
-              are linked for anyone who wants to read more.
+              Recent customers mention quick responses, on-time service, spot
+              treatment, fair pricing, and carpets that look and smell fresh.
             </p>
           </div>
           <div className="review-layout">
@@ -301,15 +314,19 @@ export default function Home() {
                 alt="Freshly cleaned upholstered chairs by J Angels Carpet Cleaning"
               />
               <div>
-                <span>5.0 on Yelp</span>
-                <strong>Real reviews, real work photos, local San Diego jobs.</strong>
+                <span>Real local feedback</span>
+                <strong>Customer comments paired with real J Angels work photos.</strong>
+                <p>
+                  Yelp may place some reviews under &quot;not currently recommended,&quot;
+                  so they may not always appear in the public rating.
+                </p>
                 <a
                   className="btn btn-dark"
                   href={yelpUrl}
                   data-track="yelp_click"
                   data-label="Yelp reviews"
                 >
-                  Read More on Yelp
+                  Visit Yelp Profile
                 </a>
               </div>
             </aside>
