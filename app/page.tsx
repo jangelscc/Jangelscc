@@ -6,7 +6,7 @@ const quoteForm =
   "https://docs.google.com/forms/d/e/1FAIpQLScKG5xAzg5fhkcHYyV2IMu3HW8PqGfKz8UOzvlT1YKR2j0arg/viewform";
 const yelpUrl = "https://www.yelp.com/biz/j-angel-s-carpet-cleaning-san-diego";
 const googleReviewUrl =
-  "https://www.google.com/search?q=J+Angels+Carpet+Cleaning+San+Diego+reviews";
+  "https://g.page/r/CfDY5ewbKTjBEAE/review";
 
 const services = [
   {
