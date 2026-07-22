@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteTitle =
-  "J Angels Carpet Cleaning | San Diego Carpet & Upholstery Cleaning";
+  "J Angels Carpet Cleaning | San Diego Carpet Cleaning Service";
 const siteDescription =
-  "Call or text J Angels Carpet Cleaning for residential carpet cleaning, move-out rental refreshes, upholstery cleaning, pet stains, and area rugs in San Diego County.";
+  "J Angels Carpet Cleaning is a San Diego carpet cleaning service for residential carpet cleaning, upholstery and couch cleaning, move-out carpet refreshes, pet stains, and area rugs.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jangelscc.com"),
@@ -44,11 +44,20 @@ export default function RootLayout({
 }>) {
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "CleaningService"],
     name: "J Angels Carpet Cleaning",
+    description: siteDescription,
     url: "https://www.jangelscc.com/",
     telephone: "+1-858-663-2079",
     email: "j.angels.cc@gmail.com",
+    knowsAbout: [
+      "Residential carpet cleaning",
+      "Upholstery cleaning",
+      "Couch cleaning",
+      "Move-out carpet refresh",
+      "Pet stain and odor cleaning",
+      "Area rug cleaning",
+    ],
     areaServed: [
       "San Diego County, CA",
       "San Diego, CA",
@@ -71,6 +80,8 @@ export default function RootLayout({
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Carpet cleaning" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Move-out rental refresh" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Upholstery and couch cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pet stain and odor cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Area rug cleaning" } },
     ],
   };
 

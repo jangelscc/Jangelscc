@@ -390,6 +390,42 @@ h3 {
   border-bottom: 2px solid currentColor;
 }
 
+.profile-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px clamp(18px, 5vw, 80px);
+  background: rgba(18, 60, 124, 0.16);
+}
+
+.profile-detail {
+  display: grid;
+  gap: 6px;
+  min-height: 104px;
+  align-content: center;
+  padding: 20px;
+  background: var(--white);
+}
+
+.profile-detail span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.profile-detail strong,
+.profile-detail a {
+  color: var(--teal-dark);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.profile-detail a:hover {
+  color: var(--teal);
+}
+
 .quote-form-section {
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(360px, 1fr);
@@ -938,6 +974,10 @@ h3 {
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .profile-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -989,6 +1029,16 @@ h3 {
 
   .yelp-photo-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-strip {
+    grid-template-columns: 1fr;
+    padding-inline: 18px;
+  }
+
+  .profile-detail {
+    min-height: 86px;
+    padding: 18px;
   }
 
   .yelp-profile-card {

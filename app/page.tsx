@@ -2,10 +2,14 @@ import Script from "next/script";
 
 const phoneDisplay = "(858) 663-2079";
 const phoneHref = "tel:+18586632079";
+const emailAddress = "j.angels.cc@gmail.com";
 const quoteForm = "#quote";
 const yelpUrl = "https://www.yelp.com/biz/j-angel-s-carpet-cleaning-san-diego";
 const googleReviewUrl =
   "https://g.page/r/CfDY5ewbKTjBEAE/review";
+const businessCategory = "Carpet cleaning service";
+const primaryServiceArea = "San Diego";
+const quoteHours = "Opens at 9 AM";
 
 const yelpRating = "5.0";
 const yelpReviewCount = "2";
@@ -26,6 +30,26 @@ const services = [
   {
     title: "Pet Stains & Odors",
     text: "Targeted treatment for pet accidents, spills, and problem areas that need extra attention before they settle in.",
+  },
+];
+
+const profileDetails = [
+  {
+    label: "Google category",
+    value: businessCategory,
+  },
+  {
+    label: "Area served",
+    value: primaryServiceArea,
+  },
+  {
+    label: "Phone",
+    value: phoneDisplay,
+    href: phoneHref,
+  },
+  {
+    label: "Quote hours",
+    value: quoteHours,
   },
 ];
 
@@ -194,9 +218,10 @@ export default function Home() {
             <p className="eyebrow">San Diego carpet & upholstery cleaning</p>
             <h1>Cleaner carpets, fresher couches, easier move-outs.</h1>
             <p className="hero-text">
-              Local, family-run cleaning for San Diego homes, apartments, move-outs,
-              area rugs, pet stains, and upholstery. Call or text photos and get a
-              simple next step without the big-company runaround.
+              J Angels Carpet Cleaning provides residential carpet cleaning,
+              upholstery and couch cleaning, and move-out carpet refresh services
+              throughout San Diego. Call or text photos and get a simple next step
+              without the big-company runaround.
             </p>
             <div className="hero-actions">
               <a
@@ -218,7 +243,7 @@ export default function Home() {
             </div>
             <div className="trust-row" aria-label="Business highlights">
               <span>{yelpRating} Yelp rating</span>
-              <span>Residential focused</span>
+              <span>{businessCategory}</span>
               <span>Move-out ready</span>
               <span>Call or text friendly</span>
             </div>
@@ -267,13 +292,33 @@ export default function Home() {
           </a>
         </section>
 
+        <section className="profile-strip" aria-label="J Angels Google Business Profile details">
+          {profileDetails.map((detail) => (
+            <div className="profile-detail" key={detail.label}>
+              <span>{detail.label}</span>
+              {detail.href ? (
+                <a
+                  href={detail.href}
+                  data-track="click_to_call"
+                  data-label={`Profile detail ${detail.label}`}
+                >
+                  {detail.value}
+                </a>
+              ) : (
+                <strong>{detail.value}</strong>
+              )}
+            </div>
+          ))}
+        </section>
+
         <section id="quote" className="section quote-form-section">
           <div className="quote-form-copy">
             <p className="eyebrow">Free quote</p>
             <h2>Tell us what needs cleaning.</h2>
             <p>
               Fill this out and we will turn it into a text message to J Angels.
-              Add photos after the text opens so we can quote faster.
+              Add photos after the text opens so we can quote faster. We serve
+              San Diego homes, renters, landlords, and property managers.
             </p>
             <div className="quote-callout">
               <strong>Prefer talking?</strong>
@@ -491,7 +536,7 @@ export default function Home() {
             <ul>
               <li>You can call or text the same business number for quotes and questions.</li>
               <li>Photos help us quote faster, especially for stains, stairs, couches, and rentals.</li>
-              <li>Residential work is the focus, with experience handling larger property jobs too.</li>
+              <li>Residential carpet, upholstery, couch, and move-out refresh jobs are the main focus.</li>
               <li>Clear communication before the job so you know what to expect.</li>
             </ul>
           </div>
@@ -570,6 +615,8 @@ export default function Home() {
         />
         <strong>J Angels Carpet Cleaning</strong>
         <span>Serving San Diego County</span>
+        <span>{businessCategory}</span>
+        <span>{quoteHours}</span>
         <a
           href={phoneHref}
           data-track="click_to_call"
@@ -577,7 +624,7 @@ export default function Home() {
         >
           {phoneDisplay}
         </a>
-        <a href="mailto:j.angels.cc@gmail.com">j.angels.cc@gmail.com</a>
+        <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
       </footer>
 
       <div className="mobile-cta" aria-label="Quick contact actions">
