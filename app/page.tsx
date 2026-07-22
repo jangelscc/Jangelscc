@@ -5,6 +5,8 @@ const phoneHref = "tel:+18586632079";
 const quoteForm =
   "https://docs.google.com/forms/d/e/1FAIpQLScKG5xAzg5fhkcHYyV2IMu3HW8PqGfKz8UOzvlT1YKR2j0arg/viewform";
 const yelpUrl = "https://www.yelp.com/biz/j-angel-s-carpet-cleaning-san-diego";
+const googleReviewUrl =
+  "https://www.google.com/search?q=J+Angels+Carpet+Cleaning+San+Diego+reviews";
 
 const services = [
   {
@@ -330,6 +332,25 @@ export default function Home() {
                 </a>
               </div>
             </aside>
+          </div>
+          <div className="google-review-strip">
+            <div>
+              <span>Google reviews</span>
+              <h3>Google reviews are coming soon.</h3>
+              <p>
+                J Angels is building up Google reviews now. If we cleaned your
+                carpet, couch, stairs, or rental, your review helps local San
+                Diego customers know what to expect.
+              </p>
+            </div>
+            <a
+              className="btn btn-gold"
+              href={googleReviewUrl}
+              data-track="google_review_click"
+              data-label="Google reviews"
+            >
+              Leave a Google Review
+            </a>
           </div>
         </section>
 
