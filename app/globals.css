@@ -390,6 +390,120 @@ h3 {
   border-bottom: 2px solid currentColor;
 }
 
+.quote-form-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(360px, 1fr);
+  gap: clamp(28px, 5vw, 74px);
+  align-items: start;
+  background:
+    linear-gradient(135deg, rgba(17, 155, 210, 0.08), rgba(244, 192, 68, 0.12)),
+    var(--paper);
+}
+
+.quote-form-copy {
+  position: sticky;
+  top: 112px;
+}
+
+.quote-form-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.quote-callout {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(18, 34, 38, 0.08);
+}
+
+.quote-callout strong {
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.quote-callout a {
+  color: var(--teal-dark);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.quote-form-card {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid rgba(18, 60, 124, 0.16);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.quote-form-card label {
+  display: grid;
+  gap: 8px;
+}
+
+.quote-form-card label span {
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.quote-form-card input,
+.quote-form-card select,
+.quote-form-card textarea {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fbfdfe;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  outline: none;
+  padding: 12px 14px;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.quote-form-card textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.quote-form-card input:focus,
+.quote-form-card select:focus,
+.quote-form-card textarea:focus {
+  border-color: var(--teal);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(17, 155, 210, 0.14);
+}
+
+.quote-submit {
+  width: 100%;
+  min-height: 56px;
+  margin-top: 2px;
+  font-size: 17px;
+}
+
+.form-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
 .section {
   padding: clamp(58px, 7vw, 98px) clamp(18px, 5vw, 80px);
 }
@@ -808,8 +922,13 @@ h3 {
 
   .hero,
   .results-section,
+  .quote-form-section,
   .why-section {
     grid-template-columns: 1fr;
+  }
+
+  .quote-form-copy {
+    position: static;
   }
 
   .hero {
@@ -863,6 +982,7 @@ h3 {
   .service-grid,
   .process-grid,
   .faq-grid,
+  .form-row,
   .photo-grid {
     grid-template-columns: 1fr;
   }

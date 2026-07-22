@@ -2,8 +2,7 @@ import Script from "next/script";
 
 const phoneDisplay = "(858) 663-2079";
 const phoneHref = "tel:+18586632079";
-const quoteForm =
-  "https://docs.google.com/forms/d/e/1FAIpQLScKG5xAzg5fhkcHYyV2IMu3HW8PqGfKz8UOzvlT1YKR2j0arg/viewform";
+const quoteForm = "#quote";
 const yelpUrl = "https://www.yelp.com/biz/j-angel-s-carpet-cleaning-san-diego";
 const googleReviewUrl =
   "https://g.page/r/CfDY5ewbKTjBEAE/review";
@@ -120,6 +119,37 @@ export default function Home() {
               event_label: target.getAttribute('data-label') || target.textContent.trim()
             });
           });
+
+          document.addEventListener('submit', function(event) {
+            const form = event.target.closest('[data-quote-form]');
+            if (!form) return;
+            event.preventDefault();
+            if (!form.reportValidity()) return;
+
+            const data = new FormData(form);
+            const rooms = data.get('rooms') ? 'Rooms/areas: ' + data.get('rooms') : '';
+            const details = data.get('details') ? 'Details: ' + data.get('details') : '';
+            const message = [
+              "Hi J Angels, I'd like a free quote.",
+              'Name: ' + data.get('name'),
+              'Phone: ' + data.get('phone'),
+              'ZIP code: ' + data.get('zip'),
+              'Service: ' + data.get('service'),
+              'Timing: ' + data.get('timing'),
+              rooms,
+              details,
+              'I can send photos next.'
+            ].filter(Boolean).join('\\n');
+
+            if (typeof gtag === 'function') {
+              gtag('event', 'quote_text_submit', {
+                event_category: 'lead',
+                event_label: data.get('service') || 'Quote form'
+              });
+            }
+
+            window.location.href = 'sms:+18586632079?&body=' + encodeURIComponent(message);
+          });
         `}
       </Script>
 
@@ -229,12 +259,93 @@ export default function Home() {
           <strong>Need a home, couch, or rental refreshed this week?</strong>
           <span>Text photos, your ZIP code, and what needs cleaning. We will help you figure out the fastest option.</span>
           <a
-            href={phoneHref}
-            data-track="click_to_call"
-            data-label="Quote band call"
+            href={quoteForm}
+            data-track="quote_form_click"
+            data-label="Quote band form"
           >
-            Call/Text Now
+            Start Quote
           </a>
+        </section>
+
+        <section id="quote" className="section quote-form-section">
+          <div className="quote-form-copy">
+            <p className="eyebrow">Free quote</p>
+            <h2>Tell us what needs cleaning.</h2>
+            <p>
+              Fill this out and we will turn it into a text message to J Angels.
+              Add photos after the text opens so we can quote faster.
+            </p>
+            <div className="quote-callout">
+              <strong>Prefer talking?</strong>
+              <a
+                href={phoneHref}
+                data-track="click_to_call"
+                data-label="Quote form call"
+              >
+                Call {phoneDisplay}
+              </a>
+            </div>
+          </div>
+
+          <form className="quote-form-card" data-quote-form>
+            <div className="form-row">
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" autoComplete="name" required />
+              </label>
+              <label>
+                <span>Phone</span>
+                <input name="phone" type="tel" autoComplete="tel" required />
+              </label>
+            </div>
+            <div className="form-row">
+              <label>
+                <span>ZIP code</span>
+                <input name="zip" type="text" inputMode="numeric" autoComplete="postal-code" required />
+              </label>
+              <label>
+                <span>Service</span>
+                <select name="service" required defaultValue="">
+                  <option value="" disabled>Choose service</option>
+                  <option>Carpet cleaning</option>
+                  <option>Move-out / rental refresh</option>
+                  <option>Upholstery / couch cleaning</option>
+                  <option>Pet stains or odors</option>
+                  <option>Area rug cleaning</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Rooms or areas</span>
+              <input name="rooms" type="text" placeholder="Example: living room, 2 bedrooms, stairs, couch" />
+            </label>
+            <label>
+              <span>When do you need it?</span>
+              <select name="timing" required defaultValue="">
+                <option value="" disabled>Choose timing</option>
+                <option>As soon as possible</option>
+                <option>This week</option>
+                <option>This weekend</option>
+                <option>Next week</option>
+                <option>Just getting a price</option>
+              </select>
+            </label>
+            <label>
+              <span>Anything we should know?</span>
+              <textarea
+                name="details"
+                rows={4}
+                placeholder="Stains, pet odor, move-out deadline, parking notes, fabric type, etc."
+              />
+            </label>
+            <button className="btn btn-gold quote-submit" type="submit" data-track="quote_text_submit_button" data-label="Quote form text">
+              Text My Quote Request
+            </button>
+            <p className="form-note">
+              Your phone will open a text to J Angels. You can review it and add
+              photos before sending.
+            </p>
+          </form>
         </section>
 
         <section id="services" className="section">
