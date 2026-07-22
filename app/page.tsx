@@ -30,66 +30,47 @@ const services = [
   },
 ];
 
-const reviews = [
-  {
-    name: "Fernanda M.",
-    location: "Poway, CA",
-    date: "Active Yelp review, Jun. 2025",
-    quote: "I have a brand new couch now.",
-    detail:
-      "Fernanda mentioned next-day couch cleaning, on-time arrival, and a fast upholstery refresh.",
-  },
-  {
-    name: "Lesli P.",
-    location: "Escondido, CA",
-    date: "Active Yelp review, Dec. 2024",
-    quote: "Very nice and efficient people and very affordable.",
-    detail:
-      "Lesli highlighted carpets looking new again, helpful service, and strong value.",
-  },
-];
-
 const workPhotos = [
   {
-    src: "/yelp/yelp-before-carpet-1.jpg",
-    title: "Carpet Cleaning Setup",
-    alt: "J Angels Carpet Cleaning equipment set up for a residential carpet cleaning job",
+    src: "/yelp/yelp-work-photo-3.jpg",
+    title: "Carpet Cleaning In Progress",
+    alt: "J Angels Carpet Cleaning extraction cleaning a residential carpet",
     label: "Yelp photo",
   },
   {
-    src: "/yelp/yelp-after-carpet-1.jpg",
+    src: "/yelp/yelp-work-photo-4.jpg",
     title: "Fresh Carpet Lines",
     alt: "Fresh carpet cleaning lines after a J Angels carpet cleaning service",
     label: "Yelp photo",
   },
   {
-    src: "/yelp/yelp-rug-cleaning.jpg",
-    title: "Rug & Carpet Refresh",
-    alt: "Rug and carpet cleaning photo from J Angels Carpet Cleaning",
+    src: "/yelp/yelp-work-photo-1.jpg",
+    title: "Room Carpet Refresh",
+    alt: "Residential carpet cleaning progress photo from J Angels Carpet Cleaning",
     label: "Yelp photo",
   },
 ];
 
 const yelpPhotos = [
   {
-    src: "/yelp/yelp-carpet-cleaning.jpg",
-    title: "Carpet cleaning",
-    alt: "J Angels Carpet Cleaning carpet cleaning work photo from Yelp",
+    src: "/yelp/yelp-work-photo-1.jpg",
+    title: "Cleaning pass",
+    alt: "Clear Yelp photo of a carpet cleaning pass by J Angels Carpet Cleaning",
   },
   {
-    src: "/yelp/yelp-after-carpet-2.jpg",
-    title: "After cleaning",
-    alt: "After photo from a J Angels Carpet Cleaning job on Yelp",
+    src: "/yelp/yelp-work-photo-3.jpg",
+    title: "Extraction cleaning",
+    alt: "Clear Yelp photo of extraction cleaning on residential carpet",
   },
   {
-    src: "/yelp/yelp-hotel-carpet.jpg",
-    title: "Property carpet",
-    alt: "Property carpet cleaning photo from J Angels Carpet Cleaning on Yelp",
+    src: "/yelp/yelp-work-photo-4.jpg",
+    title: "Fresh lines",
+    alt: "Clear Yelp photo showing fresh carpet cleaning lines",
   },
   {
-    src: "/yelp/yelp-wide-work-photo.jpg",
-    title: "Work photo",
-    alt: "Wide work photo from J Angels Carpet Cleaning on Yelp",
+    src: "/yelp/yelp-work-photo-5.jpg",
+    title: "Carpet refresh",
+    alt: "Clear Yelp photo of a J Angels Carpet Cleaning room refresh",
   },
 ];
 
@@ -319,50 +300,33 @@ export default function Home() {
 
         <section id="reviews" className="section reviews-section">
           <div className="section-heading">
-            <p className="eyebrow">Active public Yelp reviews</p>
-            <h2>Verified public feedback customers can check.</h2>
+            <p className="eyebrow">Yelp profile</p>
+            <h2>Check the current public Yelp reviews directly.</h2>
             <p>
               Yelp currently shows J Angels Carpet Cleaning at {yelpRating} stars
-              from {yelpReviewCount} active public reviews. The highlights below
-              come from the reviews visible on the public Yelp profile.
+              from {yelpReviewCount} active public reviews. To keep everything
+              certified and up to date, customers can verify the reviews and
+              public photos directly on Yelp.
             </p>
           </div>
-          <div className="review-layout">
-            <div className="review-grid">
-              {reviews.map((review) => (
-                <article className="review-card" key={review.name}>
-                  <div className="stars" aria-label="Five star review">5 stars</div>
-                  <blockquote>&quot;{review.quote}&quot;</blockquote>
-                  <p>{review.detail}</p>
-                  <footer>
-                    <strong>{review.name}</strong>
-                    <span>{review.location} | {review.date}</span>
-                  </footer>
-                </article>
-              ))}
+          <div className="yelp-profile-card">
+            <div>
+              <span>{yelpRating} stars on Yelp</span>
+              <strong>{yelpReviewCount} active public Yelp reviews and 14 public Yelp photos.</strong>
+              <p>
+                Review counts can change over time, so this link sends customers
+                straight to the public Yelp profile instead of showing outdated
+                or filtered review text on this page.
+              </p>
             </div>
-            <aside className="review-photo-card">
-              <img
-                src="/yelp/yelp-after-carpet-1.jpg"
-                alt="Fresh carpet cleaning lines from a J Angels Carpet Cleaning Yelp photo"
-              />
-              <div>
-                <span>{yelpRating} stars on Yelp</span>
-                <strong>{yelpReviewCount} active public Yelp reviews and 14 public Yelp photos.</strong>
-                <p>
-                  Want to verify the reviews and photos yourself? The Yelp profile
-                  opens in a new tab so customers can check the public listing.
-                </p>
-                <a
-                  className="btn btn-dark"
-                  href={yelpUrl}
-                  data-track="yelp_click"
-                  data-label="Yelp reviews"
-                >
-                  Visit Yelp Profile
-                </a>
-              </div>
-            </aside>
+            <a
+              className="btn btn-dark"
+              href={yelpUrl}
+              data-track="yelp_click"
+              data-label="Yelp reviews"
+            >
+              Visit Yelp Profile
+            </a>
           </div>
           <div className="google-review-strip">
             <div>
