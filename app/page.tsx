@@ -62,7 +62,11 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="J Angels Carpet Cleaning home">
-          <span className="brand-mark">JA</span>
+          <img
+            className="brand-logo"
+            src="/j-angels-logo.png"
+            alt="J Angels Carpet Cleaning logo"
+          />
           <span>
             <strong>J Angels</strong>
             <small>Carpet Cleaning</small>
@@ -97,6 +101,11 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
+            <img
+              className="hero-logo"
+              src="/j-angels-logo.png"
+              alt="J Angels Carpet Cleaning"
+            />
             <p className="eyebrow">San Diego carpet & upholstery cleaning</p>
             <h1>Cleaner carpets, fresher couches, easier move-outs.</h1>
             <p className="hero-text">
@@ -314,6 +323,11 @@ export default function Home() {
       </main>
 
       <footer className="footer">
+        <img
+          className="footer-logo"
+          src="/j-angels-logo.png"
+          alt="J Angels Carpet Cleaning logo"
+        />
         <strong>J Angels Carpet Cleaning</strong>
         <span>Serving San Diego County</span>
         <a

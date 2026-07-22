@@ -72,16 +72,12 @@ a {
   min-width: max-content;
 }
 
-.brand-mark {
-  display: grid;
-  width: 46px;
-  height: 46px;
-  place-items: center;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: var(--white);
-  font-size: 17px;
-  font-weight: 900;
+.brand-logo {
+  display: block;
+  width: 72px;
+  height: 48px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand strong,
@@ -178,6 +174,17 @@ a {
 
 .hero-copy {
   max-width: 780px;
+}
+
+.hero-logo {
+  display: block;
+  width: min(280px, 70vw);
+  height: auto;
+  margin: 0 0 20px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
 }
 
 .eyebrow {
@@ -557,6 +564,15 @@ h3 {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.footer-logo {
+  width: 110px;
+  height: 54px;
+  object-fit: contain;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
 .footer strong,
 .footer a {
   color: var(--white);
@@ -624,6 +640,15 @@ h3 {
 
   .site-header {
     position: static;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .brand-logo {
+    width: 92px;
+    height: 58px;
   }
 
   .phone-link,
