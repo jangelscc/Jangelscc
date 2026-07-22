@@ -3,15 +3,15 @@
 :root {
   --ink: #102a43;
   --muted: #5d6f7e;
-  --line: #d9eaf2;
-  --paper: #f2fbff;
+  --line: #dce8ef;
+  --paper: #f7fbfd;
   --white: #ffffff;
-  --teal: #0a9bd8;
-  --teal-dark: #1b3f91;
-  --teal-soft: #dff5ff;
-  --gold: #97cf35;
-  --gold-dark: #1f9345;
-  --charcoal: #0a2233;
+  --teal: #119bd2;
+  --teal-dark: #123c7c;
+  --teal-soft: #e8f6fc;
+  --gold: #f4c044;
+  --gold-dark: #c58a00;
+  --charcoal: #102333;
   --shadow: 0 22px 60px rgba(16, 42, 67, 0.16);
 }
 
@@ -138,12 +138,12 @@ a {
 
 .btn-gold {
   background: var(--gold);
-  color: #0b2b16;
-  box-shadow: 0 14px 30px rgba(31, 147, 69, 0.24);
+  color: #201704;
+  box-shadow: 0 14px 30px rgba(244, 192, 68, 0.28);
 }
 
 .btn-gold:hover {
-  background: #aee24a;
+  background: #ffd66a;
 }
 
 .btn-white {
@@ -165,10 +165,9 @@ a {
   min-height: 720px;
   padding: clamp(54px, 7vw, 96px) clamp(18px, 5vw, 80px);
   background:
-    linear-gradient(110deg, rgba(9, 66, 132, 0.96), rgba(10, 34, 51, 0.94)),
-    radial-gradient(circle at 13% 19%, rgba(151, 207, 53, 0.28), transparent 27%),
-    radial-gradient(circle at 80% 7%, rgba(10, 155, 216, 0.26), transparent 25%),
-    repeating-linear-gradient(90deg, #0a9bd8 0 4px, #1674b7 4px 12px);
+    linear-gradient(110deg, rgba(18, 60, 124, 0.96), rgba(16, 35, 51, 0.94)),
+    radial-gradient(circle at 80% 7%, rgba(17, 155, 210, 0.28), transparent 25%),
+    repeating-linear-gradient(90deg, #119bd2 0 4px, #0d6fa6 4px 12px);
   color: var(--white);
 }
 
@@ -341,7 +340,7 @@ h3 {
   gap: 18px;
   padding: 18px clamp(18px, 5vw, 80px);
   background: var(--gold);
-  color: #0b2b16;
+  color: #201704;
 }
 
 .quick-quote strong,
@@ -511,7 +510,7 @@ h3 {
 }
 
 .quote-panel {
-  background: linear-gradient(145deg, var(--teal), var(--teal-dark) 58%, var(--gold-dark));
+  background: linear-gradient(145deg, var(--teal), var(--teal-dark));
   color: var(--white);
 }
 
@@ -601,7 +600,7 @@ h3 {
   place-items: center;
   border-radius: 7px;
   background: var(--gold);
-  color: #0b2b16;
+  color: #201704;
   font-weight: 900;
 }
 
