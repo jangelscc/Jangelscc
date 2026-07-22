@@ -4,23 +4,62 @@ const phoneDisplay = "(858) 663-2079";
 const phoneHref = "tel:+18586632079";
 const quoteForm =
   "https://docs.google.com/forms/d/e/1FAIpQLScKG5xAzg5fhkcHYyV2IMu3HW8PqGfKz8UOzvlT1YKR2j0arg/viewform";
+const yelpUrl = "https://www.yelp.com/biz/j-angel-s-carpet-cleaning-san-diego";
 
 const services = [
   {
     title: "Carpet Cleaning",
-    text: "Bedrooms, living rooms, stairs, hallways, and high-traffic areas cleaned for a fresher home.",
+    text: "Deep cleaning for bedrooms, living rooms, stairs, hallways, and the high-traffic lanes that make a home feel worn down.",
   },
   {
     title: "Move-Out / Rental Refresh",
-    text: "A cleaner handoff for renters, landlords, property managers, and last-minute rental turnovers.",
+    text: "Carpet and spot refreshes for renters, landlords, and property managers who need a cleaner handoff before keys change hands.",
   },
   {
     title: "Upholstery & Couch Cleaning",
-    text: "Couches, sectionals, chairs, and cushions cleaned for everyday soil, body oils, and odors.",
+    text: "Couches, sectionals, dining chairs, and cushions cleaned for everyday soil, body oils, drink spills, and odors.",
   },
   {
     title: "Pet Stains & Odors",
-    text: "Targeted spot treatment for pet accidents, spills, and problem areas that need extra attention.",
+    text: "Targeted treatment for pet accidents, spills, and problem areas that need extra attention before they settle in.",
+  },
+];
+
+const reviews = [
+  {
+    name: "Fernanda M.",
+    date: "Yelp review, Jun. 2025",
+    quote: "Jose came right on time.",
+    detail:
+      "Called for a couch with water and milk stains and was able to get cleaned the next day.",
+  },
+  {
+    name: "Lesli P.",
+    date: "Yelp review, Dec. 2024",
+    quote: "My carpets look just as new.",
+    detail:
+      "Highlighted efficient, friendly service and a strong carpet cleaning result.",
+  },
+];
+
+const workPhotos = [
+  {
+    src: "/work-stair-cleaning.webp",
+    title: "Stair Carpet Cleaning",
+    alt: "Stair carpet being cleaned with extraction tool",
+    label: "Homes & stairs",
+  },
+  {
+    src: "/work-upholstery-chairs.webp",
+    title: "Upholstery Refresh",
+    alt: "Clean upholstered dining chairs",
+    label: "Couches & chairs",
+  },
+  {
+    src: "/work-commercial-carpet.webp",
+    title: "Property Carpet Refresh",
+    alt: "Commercial carpet cleaning with extraction equipment",
+    label: "Rentals & properties",
   },
 ];
 
@@ -71,6 +110,7 @@ export default function Home() {
         <nav className="main-nav" aria-label="Main navigation">
           <a href="#services">Services</a>
           <a href="#results">Results</a>
+          <a href="#reviews">Reviews</a>
           <a href="#process">How it works</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -105,8 +145,9 @@ export default function Home() {
             <p className="eyebrow">San Diego carpet & upholstery cleaning</p>
             <h1>Cleaner carpets, fresher couches, easier move-outs.</h1>
             <p className="hero-text">
-              Local, family-run cleaning for homes, apartments, rentals, area rugs,
-              pet stains, and upholstery. Call or text photos for a simple quote.
+              Local, family-run cleaning for San Diego homes, apartments, move-outs,
+              area rugs, pet stains, and upholstery. Call or text photos and get a
+              simple next step without the big-company runaround.
             </p>
             <div className="hero-actions">
               <a
@@ -127,6 +168,7 @@ export default function Home() {
               </a>
             </div>
             <div className="trust-row" aria-label="Business highlights">
+              <span>5.0 review highlights</span>
               <span>Residential focused</span>
               <span>Move-out ready</span>
               <span>Call or text friendly</span>
@@ -165,8 +207,8 @@ export default function Home() {
         </section>
 
         <section className="quick-quote">
-          <strong>Need a home, couch, or rental refreshed?</strong>
-          <span>Send a few photos and we will point you to the fastest next step.</span>
+          <strong>Need a home, couch, or rental refreshed this week?</strong>
+          <span>Text photos, your ZIP code, and what needs cleaning. We will help you figure out the fastest option.</span>
           <a
             href={phoneHref}
             data-track="click_to_call"
@@ -180,6 +222,11 @@ export default function Home() {
           <div className="section-heading">
             <p className="eyebrow">Most requested services</p>
             <h2>Built for San Diego homes, rentals, and couches.</h2>
+            <p>
+              Whether you are getting ready for guests, turning over a rental, or
+              trying to save a couch from stains and odors, the quote flow is made
+              to be simple: send the details, get a clear reply, book the clean.
+            </p>
           </div>
           <div className="service-grid">
             {services.map((service, index) => (
@@ -197,9 +244,9 @@ export default function Home() {
             <p className="eyebrow">Real results build trust</p>
             <h2>Show the clean before customers even call.</h2>
             <p>
-              Real job photos help homeowners picture the result in their own place.
-              Stairs, upholstered chairs, rental rooms, and high-traffic areas are
-              exactly the kind of work people want to see before booking.
+              People want proof before they invite someone into their home. These
+              are the kinds of jobs customers ask about most: stairs, upholstered
+              furniture, rental carpets, and high-traffic areas that need a reset.
             </p>
             <a
               className="btn btn-dark"
@@ -211,30 +258,61 @@ export default function Home() {
             </a>
           </div>
           <div className="photo-grid work-gallery" aria-label="Recent J Angels Carpet Cleaning work photos">
-            <article className="photo-tile image-tile image-tile-tall">
-              <img
-                src="/work-stair-cleaning.webp"
-                alt="Stair carpet being cleaned with extraction tool"
-              />
-              <span>Carpet cleaning</span>
-              <strong>Stairs, edges, and high-traffic spots</strong>
-            </article>
-            <article className="photo-tile image-tile">
+            {workPhotos.map((photo, index) => (
+              <article
+                className={`photo-tile image-tile ${index === 0 ? "image-tile-tall" : ""}`}
+                key={photo.title}
+              >
+                <img src={photo.src} alt={photo.alt} />
+                <span>{photo.label}</span>
+                <strong>{photo.title}</strong>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="reviews" className="section reviews-section">
+          <div className="section-heading">
+            <p className="eyebrow">Yelp review highlights</p>
+            <h2>Customers notice the timing, communication, and results.</h2>
+            <p>
+              A few public Yelp highlights are included here so visitors can see
+              real customer feedback without leaving the page. The full reviews
+              are linked for anyone who wants to read more.
+            </p>
+          </div>
+          <div className="review-layout">
+            <div className="review-grid">
+              {reviews.map((review) => (
+                <article className="review-card" key={review.name}>
+                  <div className="stars" aria-label="Five star review">5 stars</div>
+                  <blockquote>&quot;{review.quote}&quot;</blockquote>
+                  <p>{review.detail}</p>
+                  <footer>
+                    <strong>{review.name}</strong>
+                    <span>{review.date}</span>
+                  </footer>
+                </article>
+              ))}
+            </div>
+            <aside className="review-photo-card">
               <img
                 src="/work-upholstery-chairs.webp"
-                alt="Clean upholstered dining chairs"
+                alt="Freshly cleaned upholstered chairs by J Angels Carpet Cleaning"
               />
-              <span>Upholstery</span>
-              <strong>Dining chairs, cushions, couches, and fabric seats</strong>
-            </article>
-            <article className="photo-tile image-tile">
-              <img
-                src="/work-commercial-carpet.webp"
-                alt="Commercial carpet cleaning with extraction equipment"
-              />
-              <span>Rental & property refresh</span>
-              <strong>Experience with larger jobs and quick turnovers</strong>
-            </article>
+              <div>
+                <span>5.0 on Yelp</span>
+                <strong>Real reviews, real work photos, local San Diego jobs.</strong>
+                <a
+                  className="btn btn-dark"
+                  href={yelpUrl}
+                  data-track="yelp_click"
+                  data-label="Yelp reviews"
+                >
+                  Read More on Yelp
+                </a>
+              </div>
+            </aside>
           </div>
         </section>
 
@@ -267,16 +345,16 @@ export default function Home() {
             <p className="eyebrow">Why J Angels</p>
             <h2>Local service without the big-company runaround.</h2>
             <ul>
-              <li>Family-run San Diego business</li>
-              <li>Fast call/text quote flow</li>
-              <li>Residential, rental, couch, and pet-stain focus</li>
-              <li>Clear communication before the job</li>
+              <li>You can call or text the same business number for quotes and questions.</li>
+              <li>Photos help us quote faster, especially for stains, stairs, couches, and rentals.</li>
+              <li>Residential work is the focus, with experience handling larger property jobs too.</li>
+              <li>Clear communication before the job so you know what to expect.</li>
             </ul>
           </div>
           <div className="quote-panel">
             <p className="eyebrow">Free quote</p>
-            <h2>Want a price?</h2>
-            <p>Call or text photos and your ZIP code. We will help you figure out the next step.</p>
+            <h2>Want a price without waiting around?</h2>
+            <p>Call or text photos, your ZIP code, and what needs cleaning. We will help you figure out the next step.</p>
             <a
               className="btn btn-gold"
               href={phoneHref}
