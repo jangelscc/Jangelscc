@@ -626,6 +626,43 @@ h3 {
   gap: 14px;
 }
 
+.profile-photo-showcase {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(360px, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  padding: clamp(22px, 4vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(17, 155, 210, 0.08), rgba(244, 192, 68, 0.1)),
+    var(--paper);
+  box-shadow: 0 10px 30px rgba(18, 34, 38, 0.08);
+}
+
+.profile-photo-copy {
+  align-self: center;
+}
+
+.profile-photo-copy h3 {
+  max-width: 520px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.08;
+}
+
+.profile-photo-copy p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.google-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
 .yelp-photo-strip figure {
   overflow: hidden;
   margin: 0;
@@ -635,14 +672,24 @@ h3 {
   box-shadow: 0 10px 30px rgba(18, 34, 38, 0.08);
 }
 
-.yelp-photo-strip img {
+.google-photo-strip figure {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(18, 60, 124, 0.14);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.yelp-photo-strip img,
+.google-photo-strip img {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-.yelp-photo-strip figcaption {
+.yelp-photo-strip figcaption,
+.google-photo-strip figcaption {
   padding: 12px 14px;
   color: var(--teal-dark);
   font-size: 13px;
@@ -959,7 +1006,8 @@ h3 {
   .hero,
   .results-section,
   .quote-form-section,
-  .why-section {
+  .why-section,
+  .profile-photo-showcase {
     grid-template-columns: 1fr;
   }
 
@@ -1029,6 +1077,10 @@ h3 {
 
   .yelp-photo-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .google-photo-strip {
+    grid-template-columns: 1fr;
   }
 
   .profile-strip {

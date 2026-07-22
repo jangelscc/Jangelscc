@@ -97,6 +97,24 @@ const yelpPhotos = [
   },
 ];
 
+const googleProfilePhotos = [
+  {
+    src: "/google-profile/google-couch-cleaning.jpg",
+    title: "Couch refresh",
+    alt: "Google Business Profile photo of a couch cleaned by J Angels Carpet Cleaning",
+  },
+  {
+    src: "/google-profile/google-room-carpet.jpg",
+    title: "Bedroom carpet",
+    alt: "Google Business Profile photo of residential carpet cleaning in a bedroom",
+  },
+  {
+    src: "/google-profile/google-commercial-carpet.jpg",
+    title: "Property carpet",
+    alt: "Google Business Profile photo of bright commercial carpet serviced by J Angels Carpet Cleaning",
+  },
+];
+
 const neighborhoods = [
   "San Diego",
   "Pacific Beach",
@@ -419,10 +437,11 @@ export default function Home() {
             <p className="eyebrow">Recent work photos</p>
             <h2>See the kind of refresh you can expect.</h2>
             <p>
-              These public job photos show real carpet cleaning progress, fresh
-              lines, and room refreshes from J Angels work around San Diego. If
-              your carpet or couch looks similar, send a quick photo and we can
-              help with the next step.
+              These public job photos from Yelp and Google Business Profile show
+              real carpet cleaning progress, fresh lines, couch refreshes, and
+              property carpet work around San Diego. If your carpet or couch
+              looks similar, send a quick photo and we can help with the next
+              step.
             </p>
             <a
               className="btn btn-dark"
@@ -452,6 +471,25 @@ export default function Home() {
                 <figcaption>{photo.title}</figcaption>
               </figure>
             ))}
+          </div>
+          <div className="profile-photo-showcase">
+            <div className="profile-photo-copy">
+              <p className="eyebrow">Google Business Profile photos</p>
+              <h3>More public photos customers can verify on Google.</h3>
+              <p>
+                These photos come from the J Angels Google Business Profile and
+                add more proof for couch cleaning, residential carpet, and
+                property carpet refreshes.
+              </p>
+            </div>
+            <div className="google-photo-strip" aria-label="J Angels Google Business Profile photos">
+              {googleProfilePhotos.map((photo) => (
+                <figure key={photo.title}>
+                  <img src={photo.src} alt={photo.alt} />
+                  <figcaption>{photo.title}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 
