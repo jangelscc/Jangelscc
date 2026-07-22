@@ -8,6 +8,9 @@ const yelpUrl = "https://www.yelp.com/biz/j-angel-s-carpet-cleaning-san-diego";
 const googleReviewUrl =
   "https://g.page/r/CfDY5ewbKTjBEAE/review";
 
+const yelpRating = "5.0";
+const yelpReviewCount = "2";
+
 const services = [
   {
     title: "Carpet Cleaning",
@@ -29,65 +32,89 @@ const services = [
 
 const reviews = [
   {
-    name: "Patricia P.",
-    date: "Customer review, Jul. 2025",
-    quote: "Excellent spot treatment and fair pricing.",
+    name: "Fernanda M.",
+    location: "Poway, CA",
+    date: "Active Yelp review, Jun. 2025",
+    quote: "I have a brand new couch now.",
     detail:
-      "Mentioned fast replies, early arrival, friendly service, and a family-business feel.",
+      "Fernanda mentioned next-day couch cleaning, on-time arrival, and a fast upholstery refresh.",
   },
   {
-    name: "Melissa S.",
-    date: "Customer review, May 2025",
-    quote: "Prompt, professional, and like new again.",
+    name: "Lesli P.",
+    location: "Escondido, CA",
+    date: "Active Yelp review, Dec. 2024",
+    quote: "Very nice and efficient people and very affordable.",
     detail:
-      "Recommended J Angels for prompt service and carpets that looked refreshed.",
-  },
-  {
-    name: "Yesenia C.",
-    date: "Customer review, May 2025",
-    quote: "Amazing job. Super clean carpet.",
-    detail:
-      "Called out the cleaning result and customer service after a residential carpet job.",
-  },
-  {
-    name: "Karen W.",
-    date: "Customer review, Apr. 2025",
-    quote: "Cleaner, fresh-smelling, and faster drying.",
-    detail:
-      "Highlighted professional service, punctuality, clear process, and tough stain results.",
+      "Lesli highlighted carpets looking new again, helpful service, and strong value.",
   },
 ];
 
 const workPhotos = [
   {
-    src: "/work-stair-cleaning.webp",
-    title: "Stair Carpet Cleaning",
-    alt: "Stair carpet being cleaned with extraction tool",
-    label: "Homes & stairs",
+    src: "/yelp/yelp-before-carpet-1.jpg",
+    title: "Carpet Cleaning Setup",
+    alt: "J Angels Carpet Cleaning equipment set up for a residential carpet cleaning job",
+    label: "Yelp photo",
   },
   {
-    src: "/work-upholstery-chairs.webp",
-    title: "Upholstery Refresh",
-    alt: "Clean upholstered dining chairs",
-    label: "Couches & chairs",
+    src: "/yelp/yelp-after-carpet-1.jpg",
+    title: "Fresh Carpet Lines",
+    alt: "Fresh carpet cleaning lines after a J Angels carpet cleaning service",
+    label: "Yelp photo",
   },
   {
-    src: "/work-commercial-carpet.webp",
-    title: "Property Carpet Refresh",
-    alt: "Commercial carpet cleaning with extraction equipment",
-    label: "Rentals & properties",
+    src: "/yelp/yelp-rug-cleaning.jpg",
+    title: "Rug & Carpet Refresh",
+    alt: "Rug and carpet cleaning photo from J Angels Carpet Cleaning",
+    label: "Yelp photo",
+  },
+];
+
+const yelpPhotos = [
+  {
+    src: "/yelp/yelp-carpet-cleaning.jpg",
+    title: "Carpet cleaning",
+    alt: "J Angels Carpet Cleaning carpet cleaning work photo from Yelp",
+  },
+  {
+    src: "/yelp/yelp-after-carpet-2.jpg",
+    title: "After cleaning",
+    alt: "After photo from a J Angels Carpet Cleaning job on Yelp",
+  },
+  {
+    src: "/yelp/yelp-hotel-carpet.jpg",
+    title: "Property carpet",
+    alt: "Property carpet cleaning photo from J Angels Carpet Cleaning on Yelp",
+  },
+  {
+    src: "/yelp/yelp-wide-work-photo.jpg",
+    title: "Work photo",
+    alt: "Wide work photo from J Angels Carpet Cleaning on Yelp",
   },
 ];
 
 const neighborhoods = [
   "San Diego",
+  "Pacific Beach",
+  "Mira Mesa",
+  "Mission Valley",
+  "North Park",
+  "Hillcrest",
+  "City Heights",
+  "Kearny Mesa",
+  "Clairemont",
   "La Mesa",
   "Chula Vista",
   "El Cajon",
+  "Spring Valley",
+  "Bonita",
   "National City",
   "Santee",
   "Lemon Grove",
-  "Clairemont",
+  "Coronado",
+  "Poway",
+  "Escondido",
+  "East County",
 ];
 
 export default function Home() {
@@ -184,7 +211,7 @@ export default function Home() {
               </a>
             </div>
             <div className="trust-row" aria-label="Business highlights">
-              <span>Real customer feedback</span>
+              <span>{yelpRating} Yelp rating</span>
               <span>Residential focused</span>
               <span>Move-out ready</span>
               <span>Call or text friendly</span>
@@ -195,17 +222,17 @@ export default function Home() {
             <div className="result-preview image-preview">
               <figure className="preview-photo">
                 <img
-                  src="/work-stair-cleaning.webp"
-                  alt="Stair carpet cleaning in a San Diego home"
+                  src="/yelp/yelp-before-carpet-1.jpg"
+                  alt="J Angels Carpet Cleaning equipment set up for a residential carpet cleaning job"
                 />
-                <figcaption>Stair cleaning</figcaption>
+                <figcaption>Residential carpet</figcaption>
               </figure>
               <figure className="preview-photo">
                 <img
-                  src="/work-upholstery-chairs.webp"
-                  alt="Upholstered dining chairs after cleaning"
+                  src="/yelp/yelp-after-carpet-1.jpg"
+                  alt="Fresh carpet cleaning lines after service"
                 />
-                <figcaption>Upholstery refresh</figcaption>
+                <figcaption>After cleaning</figcaption>
               </figure>
             </div>
             <div className="estimate-body">
@@ -257,12 +284,12 @@ export default function Home() {
 
         <section id="results" className="section results-section">
           <div className="results-copy">
-            <p className="eyebrow">Real results build trust</p>
+            <p className="eyebrow">Yelp-visible project photos</p>
             <h2>Show the clean before customers even call.</h2>
             <p>
               People want proof before they invite someone into their home. These
-              are the kinds of jobs customers ask about most: stairs, upholstered
-              furniture, rental carpets, and high-traffic areas that need a reset.
+              public work photos show the kind of carpet, rug, and property refresh
+              jobs customers ask about most.
             </p>
             <a
               className="btn btn-dark"
@@ -285,15 +312,24 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="yelp-photo-strip" aria-label="More public Yelp work photos">
+            {yelpPhotos.map((photo) => (
+              <figure key={photo.title}>
+                <img src={photo.src} alt={photo.alt} />
+                <figcaption>{photo.title}</figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section id="reviews" className="section reviews-section">
           <div className="section-heading">
-            <p className="eyebrow">Customer feedback</p>
-            <h2>Customers notice the timing, communication, and results.</h2>
+            <p className="eyebrow">Active public Yelp reviews</p>
+            <h2>Verified public feedback customers can check.</h2>
             <p>
-              Recent customers mention quick responses, on-time service, spot
-              treatment, fair pricing, and carpets that look and smell fresh.
+              Yelp currently shows J Angels Carpet Cleaning at {yelpRating} stars
+              from {yelpReviewCount} active public reviews. The highlights below
+              come from the reviews visible on the public Yelp profile.
             </p>
           </div>
           <div className="review-layout">
@@ -305,22 +341,22 @@ export default function Home() {
                   <p>{review.detail}</p>
                   <footer>
                     <strong>{review.name}</strong>
-                    <span>{review.date}</span>
+                    <span>{review.location} | {review.date}</span>
                   </footer>
                 </article>
               ))}
             </div>
             <aside className="review-photo-card">
               <img
-                src="/work-upholstery-chairs.webp"
-                alt="Freshly cleaned upholstered chairs by J Angels Carpet Cleaning"
+                src="/yelp/yelp-after-carpet-1.jpg"
+                alt="Fresh carpet cleaning lines from a J Angels Carpet Cleaning Yelp photo"
               />
               <div>
-                <span>Real local feedback</span>
-                <strong>Customer comments paired with real J Angels work photos.</strong>
+                <span>{yelpRating} stars on Yelp</span>
+                <strong>{yelpReviewCount} active public Yelp reviews and 14 public Yelp photos.</strong>
                 <p>
-                  Yelp may place some reviews under &quot;not currently recommended,&quot;
-                  so they may not always appear in the public rating.
+                  Want to verify the reviews and photos yourself? The Yelp profile
+                  opens in a new tab so customers can check the public listing.
                 </p>
                 <a
                   className="btn btn-dark"
@@ -422,6 +458,12 @@ export default function Home() {
               <span key={area}>{area}</span>
             ))}
           </div>
+          <p className="area-note">
+            Searching for carpet cleaning near you? Call or text your ZIP code and
+            we can confirm availability for residential carpet cleaning, couch
+            cleaning, area rugs, move-out cleaning, and rental refresh jobs across
+            San Diego County.
+          </p>
         </section>
 
         <section id="faq" className="section faq-section">
