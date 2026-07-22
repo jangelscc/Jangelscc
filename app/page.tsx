@@ -134,13 +134,21 @@ export default function Home() {
           </div>
 
           <aside className="estimate-card" aria-label="Fast quote information">
-            <div className="result-preview">
-              <div className="carpet-panel before-panel">
-                <span>Before</span>
-              </div>
-              <div className="carpet-panel after-panel">
-                <span>After</span>
-              </div>
+            <div className="result-preview image-preview">
+              <figure className="preview-photo">
+                <img
+                  src="/work-stair-cleaning.webp"
+                  alt="Stair carpet cleaning in a San Diego home"
+                />
+                <figcaption>Stair cleaning</figcaption>
+              </figure>
+              <figure className="preview-photo">
+                <img
+                  src="/work-upholstery-chairs.webp"
+                  alt="Upholstered dining chairs after cleaning"
+                />
+                <figcaption>Upholstery refresh</figcaption>
+              </figure>
             </div>
             <div className="estimate-body">
               <strong>Fast free quote</strong>
@@ -187,11 +195,11 @@ export default function Home() {
         <section id="results" className="section results-section">
           <div className="results-copy">
             <p className="eyebrow">Real results build trust</p>
-            <h2>Before & after photos will make this page pop.</h2>
+            <h2>Show the clean before customers even call.</h2>
             <p>
-              This section is ready for your real job photos from Google Drive. The
-              goal is simple: visitors should see the transformation and immediately
-              know it is worth calling.
+              Real job photos help homeowners picture the result in their own place.
+              Stairs, upholstered chairs, rental rooms, and high-traffic areas are
+              exactly the kind of work people want to see before booking.
             </p>
             <a
               className="btn btn-dark"
@@ -202,22 +210,30 @@ export default function Home() {
               Get My Quote
             </a>
           </div>
-          <div className="photo-grid" aria-label="Before and after photo placeholders">
-            <article className="photo-tile before-tile">
-              <span>Before</span>
-              <strong>Traffic lanes, spots, and worn areas</strong>
+          <div className="photo-grid work-gallery" aria-label="Recent J Angels Carpet Cleaning work photos">
+            <article className="photo-tile image-tile image-tile-tall">
+              <img
+                src="/work-stair-cleaning.webp"
+                alt="Stair carpet being cleaned with extraction tool"
+              />
+              <span>Carpet cleaning</span>
+              <strong>Stairs, edges, and high-traffic spots</strong>
             </article>
-            <article className="photo-tile after-tile">
-              <span>After</span>
-              <strong>Fresh, groomed, comfortable rooms</strong>
+            <article className="photo-tile image-tile">
+              <img
+                src="/work-upholstery-chairs.webp"
+                alt="Clean upholstered dining chairs"
+              />
+              <span>Upholstery</span>
+              <strong>Dining chairs, cushions, couches, and fabric seats</strong>
             </article>
-            <article className="photo-tile before-tile">
-              <span>Before</span>
-              <strong>Couches, rentals, and pet problem areas</strong>
-            </article>
-            <article className="photo-tile after-tile">
-              <span>After</span>
-              <strong>Cleaner spaces ready to enjoy</strong>
+            <article className="photo-tile image-tile">
+              <img
+                src="/work-commercial-carpet.webp"
+                alt="Commercial carpet cleaning with extraction equipment"
+              />
+              <span>Rental & property refresh</span>
+              <strong>Experience with larger jobs and quick turnovers</strong>
             </article>
           </div>
         </section>

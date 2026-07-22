@@ -270,6 +270,50 @@ h3 {
   gap: 10px;
 }
 
+.image-preview {
+  min-height: 430px;
+}
+
+.preview-photo {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  background: var(--charcoal);
+}
+
+.preview-photo img,
+.image-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-photo::after,
+.image-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 20, 28, 0.02), rgba(10, 20, 28, 0.66));
+}
+
+.preview-photo figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 9px 10px;
+  border-radius: 7px;
+  background: rgba(16, 28, 32, 0.82);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 900;
+}
+
 .carpet-panel {
   position: relative;
   display: flex;
@@ -453,9 +497,29 @@ h3 {
 }
 
 .photo-tile strong {
+  position: relative;
+  z-index: 1;
   max-width: 260px;
   font-size: 19px;
   line-height: 1.15;
+}
+
+.image-tile {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  isolation: isolate;
+}
+
+.image-tile span {
+  z-index: 1;
+  background: rgba(244, 192, 68, 0.95);
+  color: #201704;
+}
+
+.image-tile-tall {
+  grid-row: span 2;
+  min-height: 454px;
 }
 
 .process-section {
