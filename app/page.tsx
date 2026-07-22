@@ -180,11 +180,6 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <img
-              className="hero-logo"
-              src="/j-angels-logo.png"
-              alt="J Angels Carpet Cleaning"
-            />
             <p className="eyebrow">San Diego carpet & upholstery cleaning</p>
             <h1>Cleaner carpets, fresher couches, easier move-outs.</h1>
             <p className="hero-text">
