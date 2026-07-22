@@ -58,19 +58,19 @@ const workPhotos = [
     src: "/yelp/yelp-work-photo-3.jpg",
     title: "Carpet Cleaning In Progress",
     alt: "J Angels Carpet Cleaning extraction cleaning a residential carpet",
-    label: "Yelp photo",
+    label: "Work photo",
   },
   {
     src: "/yelp/yelp-work-photo-4.jpg",
     title: "Fresh Carpet Lines",
     alt: "Fresh carpet cleaning lines after a J Angels carpet cleaning service",
-    label: "Yelp photo",
+    label: "Work photo",
   },
   {
     src: "/yelp/yelp-work-photo-1.jpg",
     title: "Room Carpet Refresh",
     alt: "Residential carpet cleaning progress photo from J Angels Carpet Cleaning",
-    label: "Yelp photo",
+    label: "Work photo",
   },
 ];
 
@@ -416,12 +416,13 @@ export default function Home() {
 
         <section id="results" className="section results-section">
           <div className="results-copy">
-            <p className="eyebrow">Yelp-visible project photos</p>
-            <h2>Show the clean before customers even call.</h2>
+            <p className="eyebrow">Recent work photos</p>
+            <h2>See the kind of refresh you can expect.</h2>
             <p>
-              People want proof before they invite someone into their home. These
-              public work photos show the kind of carpet, rug, and property refresh
-              jobs customers ask about most.
+              These public job photos show real carpet cleaning progress, fresh
+              lines, and room refreshes from J Angels work around San Diego. If
+              your carpet or couch looks similar, send a quick photo and we can
+              help with the next step.
             </p>
             <a
               className="btn btn-dark"
@@ -456,23 +457,22 @@ export default function Home() {
 
         <section id="reviews" className="section reviews-section">
           <div className="section-heading">
-            <p className="eyebrow">Yelp profile</p>
-            <h2>Check the current public Yelp reviews directly.</h2>
+            <p className="eyebrow">Reviews</p>
+            <h2>Check the public Yelp profile before you book.</h2>
             <p>
-              Yelp currently shows J Angels Carpet Cleaning at {yelpRating} stars
-              from {yelpReviewCount} active public reviews. To keep everything
-              certified and up to date, customers can verify the reviews and
-              public photos directly on Yelp.
+              J Angels Carpet Cleaning currently shows a {yelpRating} star Yelp
+              rating from {yelpReviewCount} public reviews. We send customers to
+              the Yelp profile so the rating, reviews, and photos can be checked
+              at the source.
             </p>
           </div>
           <div className="yelp-profile-card">
             <div>
               <span>{yelpRating} stars on Yelp</span>
-              <strong>{yelpReviewCount} active public Yelp reviews and 14 public Yelp photos.</strong>
+              <strong>See our current Yelp reviews and work photos.</strong>
               <p>
-                Review counts can change over time, so this link sends customers
-                straight to the public Yelp profile instead of showing outdated
-                or filtered review text on this page.
+                The profile opens in a new tab so you can verify what customers
+                see publicly before requesting a quote.
               </p>
             </div>
             <a
@@ -487,11 +487,11 @@ export default function Home() {
           <div className="google-review-strip">
             <div>
               <span>Google reviews</span>
-              <h3>Google reviews are coming soon.</h3>
+              <h3>Help us build our Google reviews.</h3>
               <p>
-                J Angels is building up Google reviews now. If we cleaned your
-                carpet, couch, stairs, or rental, your review helps local San
-                Diego customers know what to expect.
+                If J Angels cleaned your carpet, couch, stairs, or rental, a
+                quick Google review helps other San Diego customers feel
+                confident before they call.
               </p>
             </div>
             <a

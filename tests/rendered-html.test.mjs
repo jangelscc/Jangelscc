@@ -37,6 +37,10 @@ test("server-renders the J Angels landing page", async () => {
   );
   assert.match(html, /Cleaner carpets, fresher couches, easier move-outs\./);
   assert.match(html, /Tell us what needs cleaning\./);
+  assert.match(html, /See the kind of refresh you can expect\./);
+  assert.match(html, /Check the public Yelp profile before you book\./);
+  assert.match(html, /See our current Yelp reviews and work photos\./);
+  assert.match(html, /Help us build our Google reviews\./);
   assert.match(html, /Google category/);
   assert.match(html, /Carpet cleaning service/);
   assert.match(html, /Area served/);
@@ -59,6 +63,8 @@ test("keeps SEO and business details aligned with the public profile", async () 
   assert.match(page, /const primaryServiceArea = "San Diego"/);
   assert.match(page, /const quoteHours = "Opens at 9 AM"/);
   assert.match(page, /J Angels Carpet Cleaning provides residential carpet cleaning/);
+  assert.match(page, /See our current Yelp reviews and work photos/);
+  assert.match(page, /Help us build our Google reviews/);
   assert.match(layout, /"@type": \["LocalBusiness", "CleaningService"\]/);
   assert.match(layout, /knowsAbout/);
   assert.match(layout, /Pet stain and odor cleaning/);
